@@ -11,11 +11,15 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
+function minToSec(duration) {
   // Your code
+  return 60*duration;
 }
 // - Execute the function with required parameter
 
+minToSec(50) // 3000
+minToSec(13) // 780
+minToSec(2) // 120
 /* 2. 
 Create a function named isInRange which validates whether a number n is exclusively within the bounds of lower and upper.
 Return true and false based on that.
@@ -26,8 +30,15 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
+function isInRange(range_start = 1, range_end, num) {
   // Your code
+  if (num >= range_start) {
+    if (num <= range_end) {
+      return true;
+    }
+  } else {
+    return false;
+  }
 }
 // - Execute the function with required parameter
 
@@ -49,8 +60,18 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
+function calculateBMI(weight, height) {
   // Your code
+  let bmi = weight / (height ** 2);
+  if (bmi > 30 ) {
+    return "Obese";
+  } else if ( bmi > 25 && bmi < 29.9){
+    return "Overweight";
+  } else if ( bmi > 18.5 && bmi < 24.9 ) {
+    return "Normal";
+  } else if (bmi < 18.5) {
+    return "Underweight";
+  }
 }
 
 /* 3. appropiateDrinks
@@ -79,8 +100,14 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
+function sum(par1, par2) {
   // Your code
+  if ((typeof(par1) == 'string' && typeof(par2) == 'string') || (typeof(par1) == 'number' && typeof(par2) == 'number') ) {
+    return par1+par2;
+  } else {
+    return "Enter a Valid Number";
+  }
+
 }
 
 // Function Test
